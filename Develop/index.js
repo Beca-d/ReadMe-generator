@@ -120,7 +120,47 @@ const questions = [
         }
     },
 ];
+.then(({
+    title,
+    description,
+    installation,
+    usage,
+    license,
+    contributing,
+    tests,
+    questions,
+    github,
+    email
+})=>{
+const template =`# ${title}
 
+## Description 
+${description}
+##Table of Contents
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+## Installation
+${installation}
+## Usage
+${usage}
+## License
+${license}
+## Contributing
+${contributing}
+## Tests
+${tests}
+## Questions
+${questions}
+If you have any questions please feel free to send me an email at <${email}>
+or visit my GitHub Profile ${github}(https://github.com/${github})
+`
+}
+)
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
