@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 inquirer.prompt(
@@ -35,40 +36,17 @@ inquirer.prompt(
             type: 'input',
             name: 'installation',
             message: 'How do you install your app?',
-            validate: installationInput => {
-                if (installationInput) {
-                    return true;
-                } else {
-                    console.log('Please enter how to install your app!');
-                    return false;
-                }
-            }
+            
         },
         {
             type: 'input',
             name: 'usage',
-            message: '',
-            validate: usageInput => {
-                if (usageInput) {
-                    return true;
-                } else {
-                    console.log('');
-                    return false;
-                }
-            }
+            message: 'Enter usage information.',
         },
         {
             type: 'input',
             name: 'contributing',
             message: 'How can others contribute to this project?',
-            validate: contributingInput => {
-                if (contributingInput) {
-                    return true;
-                } else {
-                    console.log('Please enter information for contributors!');
-                    return false;
-                }
-            }
         },
         {
             type: 'input',
@@ -79,20 +57,30 @@ inquirer.prompt(
             type: 'input',
             name: 'questions',
             message: 'How should people ask questions?',
-            validate: questionsInput => {
-                if (questionsInput) {
-                    return true;
-                } else {
-                    console.log('Please enter where people can ask their questions');
-                    return false;
-                }
-            }
         },
         {
             type: 'list',
             name: 'license',
             message: 'What license did you use?',
-            choices: ['yes', 'no', 'maybe']
+            choices: [
+                {
+                    name: 'The MIT License',
+                    value: 'badge1'
+                },                   
+                {
+                    name: 'The GPL License',
+                    value: 'badge2' 
+                },
+                {
+                    name: 'Apache License',
+                    value: 'badge3' 
+                },
+                {
+                    name: 'GNU License',
+                    value: 'badge4'
+                }
+            ]
+
         },
         {
             type: 'input',
@@ -135,6 +123,7 @@ inquirer.prompt(
 })=>{
 const template =`# ${title}
 
+${license}
 ## Description 
 ${description}
 ## Table of Contents
