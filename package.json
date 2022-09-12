@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Beca-d/ReadMe-generator#readme",
   "dependencies": {
+    "assert": "^2.0.0",
     "inquirer": "^8.2.4"
   }
 }

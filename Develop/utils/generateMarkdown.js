@@ -26,7 +26,6 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
   function renderLicenseLink(license) {
 
     if (license.toLowerCase() === 'none') {
@@ -50,17 +49,68 @@ function renderLicenseLink(license) {
         console.log(`No matched License found for  ${license}.`);
     }
   }
-}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license.toLowerCase() === 'none') {
+    return ' '
+  }
+
+  return `[${license}]${renderLicenseLink(license)}`;
+}
+
+//Create a function that returns the badge section of README
+// If there is no license, return an empty string
+function renderBadgeSection(license) {
+  if (license.toLowerCase() === 'none') {
+    return ' '
+  }
+
+  return `[![${license} License]${renderLicenseBadge(license)}]${renderLicenseLink(license)}`;
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `
+  # ${data.title}
 
-`;
-}
+  ${renderBadgeSection(data.License)}
+
+  ## Description 
+
+  ${data.description}
+
+  ## Table of Contents
+
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  
+  ## Installation
+  ${data.installation}
+
+  ## Usage
+  ${data.usage}
+
+  ## License
+  ${data.license}
+
+  ## Contributing
+  ${data.contributing}
+
+  ## Tests
+  ${data.tests}
+
+  ## Questions
+  ${data.questions}
+  If you have any questions please feel free to send me an email at <${data.email}>
+  or visit my GitHub Profile [${data.github}](https://github.com/${data.github})
+  `;
+};
 
 module.exports = generateMarkdown;
