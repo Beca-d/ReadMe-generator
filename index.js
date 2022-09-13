@@ -43,6 +43,12 @@ const questions = [
         message: 'Enter usage information.',
     },
     {
+        type: 'list',
+        name: 'license',
+        message: 'What license did you use?',
+        choices: ["None", "MIT", "GPLv3", "Apache 2.0"]
+    },
+    {
         type: 'input',
         name: 'contributing',
         message: 'How can others contribute to this project?',
@@ -51,17 +57,6 @@ const questions = [
         type: 'input',
         name: 'tests',
         message: 'What are the instructions for testing?',
-    },
-    {
-        type: 'input',
-        name: 'questions',
-        message: 'How should people ask questions?',
-    },
-    {
-        type: 'list',
-        name: 'license',
-        message: 'What license did you use?',
-        choices: ["None", "MIT", "GPLv3", "Apache 2.0"]
     },
     {
         type: 'input',
@@ -91,18 +86,22 @@ const questions = [
     }
 ];
 
-
+// TODO: Create a function to write README file
 function writeToFile(data){
+    return new Promise((resolve, reject) => {
+        fs.writeFile("./Develop/README.md", data, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve ({
+                ok: true,
+                message: "file created successfully!"
+            });
+        })
+    });
+};
 
-fs.writeFile(fileName, data, (err)=>{
-        if (err) {
-            console.log(err);
-        }
-            console.log('Your README file has been created!');
-})
-}
-// // TODO: Create a function to write README file
-// function writeToFile (fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {
