@@ -109,6 +109,8 @@ function generateMarkdown(data) {
 
   ## License
 
+  Click the link below to view more information about the license this application is covered under:
+  
   ${renderLicenseSection(data.license)}
 
   ---
