@@ -1,11 +1,15 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license.toLowerCase() === 'none') {
+  if (license === '') {
     return ' '
   }
 
   switch (license.toLowerCase(license)) {
+    case "unlicensed":
+      return '(https://img.shields.io/badge/license-Unlicense-blue.svg)'
+      break;
+
     case "mit":
       return '(https://img.shields.io/badge/License-MIT-yellow.svg)'
       break;
@@ -28,11 +32,15 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
   function renderLicenseLink(license) {
 
-    if (license.toLowerCase() === 'none') {
+    if (license === '') {
       return ' '
     }
   
     switch (license.toLowerCase(license)) {
+      case "unlicensed":
+        return '(http://unlicense.org/)'
+        break;
+
       case "mit":
         return '(https://choosealicense.com/licenses/mit/)'
         break;
@@ -53,7 +61,7 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license.toLowerCase() === 'none') {
+  if (license === '') {
     return ' '
   }
 
@@ -63,7 +71,7 @@ function renderLicenseSection(license) {
 //Create a function that returns the badge section of README
 // If there is no license, return an empty string
 function renderBadgeSection(license) {
-  if (license.toLowerCase() === 'none') {
+  if (license === '') {
     return ' '
   }
 

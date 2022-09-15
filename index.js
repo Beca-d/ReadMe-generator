@@ -46,7 +46,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What license did you use?',
-        choices: ["None", "MIT", "GPLv3", "Apache 2.0"]
+        choices: ["Unlicensed", "MIT", "GPLv3", "Apache 2.0"]
     },
     {
         type: 'input',
@@ -96,7 +96,7 @@ function writeToFile(data){
             }
             resolve ({
                 ok: true,
-                message: "file created successfully!"
+                message: console.log("file created successfully!"),
             });
         })
     });
