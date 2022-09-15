@@ -5,7 +5,7 @@
 
   ## Description 
 
-  The purpose of this project is to create a professional readme using Node js to prompt the user for information in the command prompt then to render that information to the README.
+  The purpose of this project is to create a professional README using Node js and inquirer to prompt the user for information in the command prompt then to render that information to the README.
 
   ---
 
@@ -14,6 +14,7 @@
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Demo](#demo)
   * [License](#license)
   * [Contributing](#contributing)
   * [Tests](#tests)
@@ -32,6 +33,10 @@
   Use this project to generate your own README by navigating, in your terminal, to the root directory where this project is saved and run node index.js. Answer all of the questions in your termianl and once complete your README.md file will be generated in the root directory.
 
   ---
+  
+  ## Demo 
+  
+  [README Generator Demo](https://drive.google.com/file/d/1gT95muCi2z05tjjpIqz_2IDm7VZZLn32/view)
 
   ## License
 
@@ -55,7 +60,6 @@
   
   ## Questions
 
-  undefined
   If you have any questions please feel free to send me an email at <beca.d.smith@gmail.com>
 
   or visit my GitHub Profile [Beca-d](https://github.com/Beca-d)
